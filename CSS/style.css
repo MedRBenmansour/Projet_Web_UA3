@@ -403,6 +403,35 @@ img {
 }
 
 /* =====================
+   DARK MODE
+   ===================== */
+
+body.dark {
+  --bg: #0f172a;
+  --white: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+
+  --green: #22c55e;
+  --green-light: #064e3b;
+
+  --gold: #fbbf24;
+  --gold-light: #78350f;
+
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+#DarkMode {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+}
+
+
+/* =====================
    RESPONSIVE MOBILE
    ===================== */
 @media (max-width: 600px) {

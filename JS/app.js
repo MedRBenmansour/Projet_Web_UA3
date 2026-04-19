@@ -182,15 +182,34 @@ function recetteAleatoire() {
 // ===============================
 // INIT
 // ===============================
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('searchInput').addEventListener('input', filterRecettes);
-  document.getElementById('btnAleatoire').addEventListener('click', recetteAleatoire);
 
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Recherche
+  document.getElementById('searchInput')
+    .addEventListener('input', filterRecettes);
+
+  // Bouton aléatoire
+  document.getElementById('btnAleatoire')
+    .addEventListener('click', recetteAleatoire);
+
+  // Filtres
   document.querySelectorAll('.chip').forEach(chip => {
     chip.addEventListener('click', () => {
       setFiltre(chip.dataset.filtre, chip);
     });
   });
 
+  // Dark mode
+  const DarkMode = document.getElementById("DarkMode");
+
+  if (DarkMode) {
+    DarkMode.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark");
+      DarkMode.textContent = isDark ? "☀️" : "🌙";
+    });
+  }
+
+  // Rendu initial
   renderGrid();
 });
