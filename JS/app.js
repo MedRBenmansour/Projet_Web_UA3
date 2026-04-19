@@ -7,7 +7,7 @@ import { recettes } from './data.js';
 
 const favoris = new Set();
 
-function toggleFavori(id) {
+function setFavori(id) {
   favoris.has(id) ? favoris.delete(id) : favoris.add(id);
 }
 
@@ -29,7 +29,6 @@ function renderGrid(liste = recettes) {
     grid.innerHTML = `
       <div class="empty">
         Aucune recette trouvée !<br>
-        <small>Essayez un autre mot-clé</small>
       </div>
     `;
     return;
@@ -42,11 +41,9 @@ function renderGrid(liste = recettes) {
     return `
       <div class="card${isSelected ? ' selected' : ''}" data-id="${r.id}">
         
-<div class="card-image">
-  <img src="${r.image}" alt="${r.nom}">
-</div>
-
-
+        <div class="card-image">
+          <img src="${r.image}" alt="${r.nom}">
+        </div>
         <div class="card-body">
           <h3>${r.nom}</h3>
 
@@ -71,7 +68,7 @@ function renderGrid(liste = recettes) {
     `;
   }).join('');
 
-  // Carte → détail
+  // Carte détail
   grid.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       afficherDetail(Number(card.dataset.id));
@@ -83,7 +80,7 @@ function renderGrid(liste = recettes) {
     btn.addEventListener('click', e => {
       e.stopPropagation();
       const id = Number(btn.dataset.id);
-      toggleFavori(id);
+      setFavori(id);
       renderGrid(getRecettesFiltrees());
       if (recetteSelectionnee === id) afficherDetail(id);
     });
