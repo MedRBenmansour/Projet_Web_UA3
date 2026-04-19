@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Recettes d’Afrique du Nord</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+  <script type="module" src="/JS/app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🍽 Recettes d’Afrique du Nord</h1>
+    <div class="flags">
+      <img src="/assets/tn.png" alt="Tunisie">
+      <img src="/assets/dz.png" alt="Algérie">
+    </div>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+
+    <!-- BARRE DE RECHERCHE -->
+    <div class="barre-rech">
+      <input type="text" id="searchInput" placeholder="Rechercher une recette ou un ingrédient...">
+      <button class="btn-alea" id="btnAleatoire">🎲 Aléatoire</button>
+    </div>
+
+    <!-- FILTRES -->
+    <div class="filters">
+      <span class="chip active" data-filtre="tous">Toutes</span>
+      <span class="chip" data-filtre="dz">Algériennes</span>
+      <span class="chip" data-filtre="tn">Tunisiennes</span>
+      <span class="chip" data-filtre="soupe">Soupes</span>
+      <span class="chip" data-filtre="plat">Plats principaux</span>
+      <span class="chip" data-filtre="entree">Entrées</span>
+      <span class="chip" data-filtre="dessert">Desserts</span>
+    </div>
+
+    <!-- RECETTES -->
+    <div class="section-title">Recettes disponibles</div>
+    <div class="grid" id="grid"></div>
+
+    <!-- DETAIL -->
+    <div class="section-title" id="detailTitle" style="display:none">
+      Détail de la recette
+    </div>
+    <div class="detail" id="detail" style="display:none"></div>
+    
+  </main>
+
+  
+  <footer>
+    <p>
+      &copy; 2026 - Recettes d’Afrique du Nord 
+    </p>
+  </footer>
+</body>
+
+</html>
